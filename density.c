@@ -20,7 +20,7 @@ void density(void)
 	ri = ri*ni/(ni+ni_EP/weighting_EP);
     }
 
-    for (j=0; j<=nx+1; j++) 
+    for (j=0; j<=nx; j++) 
     {
 	rho_plasmae[j] = 0.0;
 	rho_plasmai[j] = 0.0;
@@ -68,7 +68,8 @@ void density(void)
 
     for (j=0; j<=nx+1; j++)
 	rho_all[j] = rho_plasmae[j] + rho_plasmai[j] + rho_EP[j];
-
+/*	rho_all[j] = rho_plasmae[j];
+*/
     if (bc_field == 1)
     {
         /* periodic boundaries */ 

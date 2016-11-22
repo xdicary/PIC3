@@ -11,7 +11,7 @@ void input(void)
 {
     /* set up simulation parameters */
 
-    nt = 20000;			/* # timesteps  */
+    nt = 10000;			/* # timesteps  */
     nx = 1000;                   /* # grid points */
 
     ne = 50000;			/* # electrons   */

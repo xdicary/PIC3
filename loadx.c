@@ -51,6 +51,6 @@ void loadx(int n, double x[])
 
     for (i = 0; i < n; i++)
     { 
-        x[i] = plasma_start + dpxe*(i-0.5);
+        x[i] = plasma_start + dpxe*(i+0.5);
     }
 }
