@@ -20,6 +20,6 @@ void loadx_EP(void)
 
     for (i = 0; i < ni_EP; i++)
     { 
-        x_EP[i] = plasma_start + dpx*(i-0.5);
+        x_EP[i] = plasma_start + dpx*(i+0.5);
     }
 }

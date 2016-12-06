@@ -23,7 +23,7 @@
 #define MaxEP 500001
 #define MaxGrid 2001
 #define MaxTime 60001
-
+#define fftpoint 2000
 
 /* particle arrays */ 
 
@@ -51,6 +51,8 @@ double rhot[MaxGrid];
 double Ex[MaxGrid];
 double phi[MaxGrid];
 double pphi[MaxGrid];
+
+double phifft[fftpoint];
 
 double Ex_mid[MaxTime];
 double phi_mid[MaxTime];
@@ -94,6 +96,8 @@ double TotalEnergy[MaxTime];
  int  nt;                       /* # timesteps */
  int  i_time;                   /* current timestep */
  double  dt;                     /* timestep */
+
+ int fftsize;
 
  long  nx;                       /* # grid points */
  double  dx;                     /* mesh size */

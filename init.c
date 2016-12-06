@@ -32,7 +32,7 @@ void init(void)
 
     lambda_d = vte/omega_p;	/* Debye length */
 
-    q_over_mi = q_over_me/1836.0;
+    q_over_mi = -q_over_me/1836.0;
 
     xdodx = lambda_d/dx;	/* ratio */
 
@@ -43,6 +43,9 @@ void init(void)
 
     for (i=0; i<=nx; i++)
 	pphi[i] = 0.0;
+
+    for (i=0; i<fftpoint; i++)
+	phifft[i] = 0.0;
 
     for ( i=0; i<=nt; i++ )
     {
@@ -62,7 +65,6 @@ void init(void)
     printf("# plasma ions = %d\n", ni);
     printf("# plasma ions/cell = %d\n", nicell);
 
-
     if (energic_particle != 0)
     {
 	printf("# EP = %d\n", ni_EP);
@@ -77,7 +79,7 @@ void init(void)
 
     printf("timestep = %f\n",dt);
     printf("# timesteps = %d\n", nt);
-    printf("run time = %f\n",dt*nt);
+    printf("run time = %f\n\n",dt*nt);
 
     dt = dt*2*pi;
 

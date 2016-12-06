@@ -54,6 +54,18 @@ void plots(void)
 
     fclose(plot_file);
 
+
+    sprintf(cfile,"phifft%d.data", isnap );
+    plot_file = fopen(cfile, "w");
+
+    for (j=0; j<fftsize; j++)
+    {
+        fprintf( plot_file, "%f\n" , phifft[j] );
+    }
+
+    fclose(plot_file);
+
+
     sprintf(cfile,"vt%d.data", isnap );
     plot_file = fopen(cfile, "w");
 
@@ -66,10 +78,7 @@ void plots(void)
     {
     for (j=0; j<ni_EP; j++)
     {
-        if( vx_EP[j]>=0 )
-            fprintf( plot_file, "%f\n" , vx_EP[j]);
-        else
-            fprintf( plot_file, "%f\n" , -vx_EP[j]);
+	fprintf( plot_file, "%f	%f\n" , 0.0, vx_EP[j]);
     }
     }
 

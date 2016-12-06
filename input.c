@@ -11,33 +11,34 @@ void input(void)
 {
     /* set up simulation parameters */
 
-    nt = 10000;			/* # timesteps  */
-    nx = 1000;                   /* # grid points */
+    nt = 50000;			/* # timesteps  */
+    nx = 1024;                   /* # grid points */
 
-    ne = 50000;			/* # electrons   */
-    ni = 50000;                     /* # ions */
+    ne = 51200;			/* # electrons   */
+    ni = 51200;                     /* # ions */
 
     ne_EP = 0;
-    ni_EP = 0;
+    ni_EP = 10240;
 
     weighting_EP = 1.0;
 
     v_EP = 4.0;
     vi_EP = 1.0;
 
-    grid_length = 200.0;        /* size of spatial grid */
+    grid_length = 204.8;        /* size of spatial grid */
     plasma_start = 0.;          /* plasma edge */
 
-    dt = 0.05;			/* normalised timestep */
+    dt = 0.02;			/* normalised timestep */
 
-    q_over_me = 1;             /* electron charge:mass ratio */
+    q_over_me = -1.0;             /* electron charge:mass ratio */
 
     rho0 = 1.0;			/* background ion density */
     vte = 1.0;			/* thermal velocity */
     vti = 0.015;
     
+    fftsize = 1024;		/* 2^n */
 
-    energic_particle = 0;       /* 0 = no energic particles,    */
+    energic_particle = 1;       /* 0 = no energic particles,    */
                                 /* 1 = energic electrons,       */
                                 /* 2 = energic ions             */
 

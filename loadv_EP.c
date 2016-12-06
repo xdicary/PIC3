@@ -34,8 +34,8 @@ void loadv_EP(void)
 	for (j=0; j<2; j++)
 	    a[j] = (double) random() / random_max;
 
-	vx_EP[i] = vi_EP+sqrt(-2*vti*vti*log(a[0]))*cos(2*vti*vti*pi*a[1]);
-	vx_EP[i+1] = vi_EP+sqrt(-2*vti*vti*log(a[0]))*sin(2*vti*vti*pi*a[1]);
+	vx_EP[i] = vi_EP+sqrt(-2*vti*vti*log(a[0]))*cos(2*pi*a[1]);
+	vx_EP[i+1] = vi_EP+sqrt(-2*vti*vti*log(a[0]))*sin(2*pi*a[1]);
     }
 
 }

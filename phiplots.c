@@ -1,4 +1,3 @@
-
 /*****************************************
 **					**
 **	 Plot phi E v with time		**
@@ -47,7 +46,7 @@ void phiplots(void)
 
     for (i=1; i<=nt; i++)
     {
-        fprintf(plot_file, "%d  %f	%f	%f\n", i, TotalEnergy[i], Energy_P_EP[i], Energy_E[i]);
+        fprintf(plot_file, "%d  %f	%f	%f	%f\n", i, TotalEnergy[i], Energy_Pe[i], Energy_Pi[i], Energy_E[i]);
     }
 
     fclose(plot_file);

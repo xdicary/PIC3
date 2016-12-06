@@ -61,8 +61,8 @@ void density(void)
             j2 = j1 + 1;
             f2 = xa - j1;
             f1 = 1.0 - f2;
-            rho_EP[j1] = rho_EP[j1] + re*f1/weighting_EP;
-            rho_EP[j2] = rho_EP[j2] + re*f2/weighting_EP;
+            rho_EP[j1] = rho_EP[j1] + ri*f1/weighting_EP;
+            rho_EP[j2] = rho_EP[j2] + ri*f2/weighting_EP;
         }
     }
 

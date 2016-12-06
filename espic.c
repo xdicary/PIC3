@@ -23,7 +23,7 @@ extern void diagnostics(void);		/* diagnostic routine */
 extern void phiplots(void);
 extern void input(void);
 extern void perturbation(void);
-
+extern void filtering(void);
 
 FILE *history_file;			/* file for writing out time histories */            
 
@@ -57,6 +57,8 @@ int main()
 
     field();				/* compute initial electric field */
 
+    filtering();
+
     diagnostics();			/* output initial conditions */
 
  
@@ -71,7 +73,7 @@ int main()
 
         if (energic_particle != 0)
         {
-            push(ni_EP, x_EP, Ex, vx_EP, q_over_me);
+            push(ni_EP, x_EP, Ex, vx_EP, q_over_mi);
 
             boundaries(ni_EP, x_EP, vx_EP);
         }
@@ -79,6 +81,8 @@ int main()
         density();			/* compute density */
 
         field();			/* compute electric field (Poisson) */
+
+	filtering();
 
         diagnostics();			/* output snapshots and time-histories */
 
