@@ -20,8 +20,8 @@ void filtering(void)
 	{
 		x[i].real = sin(2*PI*10/fftsize*i)+2*sin(2*PI*10/fftsize*i*5);
 		x[i].img = 0.0;
-	}*/
-
+	}
+*/
 	for (i=0; i<nx; i++)
 	{
 		x[i].real = phi[i];
@@ -30,12 +30,23 @@ void filtering(void)
 
 	initW();
 	fft();
-/*	ifft();*/
 	for (i = 0; i<nx; i++)
 	{
 		phifft[i] = sqrt(x[i].real*x[i].real+x[i].img*x[i].img);
 	}
-
+	for (i = 0; i<nx; i++)
+	{
+		if (i != 1 || i == 0)
+		{
+			x[i].real = 0.0;
+			x[i].img = 0.0;
+		}
+	}
+	ifft();
+	for (i=0; i<nx; i++)
+		phi[i] = x[i].real;
+/*		phi[i] = sin(2*PI*10/fftsize*i)+2*sin(2*PI*10/fftsize*i*5);
+*/	phi[nx] = phi[0];
 }
 
 /*进行基-2 FFT运算*/

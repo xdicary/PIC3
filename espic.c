@@ -23,7 +23,6 @@ extern void diagnostics(void);		/* diagnostic routine */
 extern void phiplots(void);
 extern void input(void);
 extern void perturbation(void);
-extern void filtering(void);
 
 FILE *history_file;			/* file for writing out time histories */            
 
@@ -57,8 +56,6 @@ int main()
 
     field();				/* compute initial electric field */
 
-    filtering();
-
     diagnostics();			/* output initial conditions */
 
  
@@ -81,8 +78,6 @@ int main()
         density();			/* compute density */
 
         field();			/* compute electric field (Poisson) */
-
-	filtering();
 
         diagnostics();			/* output snapshots and time-histories */
 

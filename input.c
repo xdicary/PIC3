@@ -11,7 +11,7 @@ void input(void)
 {
     /* set up simulation parameters */
 
-    nt = 50000;			/* # timesteps  */
+    nt = 10000;			/* # timesteps  */
     nx = 1024;                   /* # grid points */
 
     ne = 51200;			/* # electrons   */
@@ -23,7 +23,7 @@ void input(void)
     weighting_EP = 1.0;
 
     v_EP = 4.0;
-    vi_EP = 1.0;
+    vi_EP = 2.0;
 
     grid_length = 204.8;        /* size of spatial grid */
     plasma_start = 0.;          /* plasma edge */
@@ -38,10 +38,11 @@ void input(void)
     
     fftsize = 1024;		/* 2^n */
 
-    energic_particle = 1;       /* 0 = no energic particles,    */
+    energic_particle = 0;       /* 0 = no energic particles,    */
                                 /* 1 = energic electrons,       */
                                 /* 2 = energic ions             */
 
+    filtering_switch = 1;	/* 0 = no filtering	*/
 
     perturbation_switch = 0;	/* 0 = no perturbation, 			*/
 				/* 1 = perturbation on initial density,		*/

@@ -105,6 +105,7 @@ double TotalEnergy[MaxTime];
  int  bc_particle;              /* particle boundary condition switch */
  int  bc_field;                 /* field boundary condition */
 
+ int filtering_switch;
  int perturbation_switch;
  int energic_particle;
 

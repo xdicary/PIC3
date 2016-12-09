@@ -9,6 +9,7 @@
 #include "math.h"
 
 extern void tdma(void);
+extern void filtering(void);
 
 void field(void)
 {
@@ -23,6 +24,9 @@ void field(void)
     /* Use tridiagonal matrix algorithm to solve Poisson equation and work out the potential from the density of charge */
 
     tdma();
+
+    if ( filtering_switch != 0 )
+	filtering();
 
     if ( perturbation_switch == 2 )
     {
