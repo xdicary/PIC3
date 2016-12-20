@@ -9,7 +9,7 @@
 #include "math.h"
 #include "time.h"
 
-void loadv_EP(void)
+void loadv_EP(int n_EP, double v_EP, double vt, double vx_EP[])
 {
 
     int i, j;
@@ -29,13 +29,13 @@ void loadv_EP(void)
     }
 */
 
-    for (i=0; i<ni_EP; i=i+2)
+    for (i=0; i<n_EP; i=i+2)
     {
 	for (j=0; j<2; j++)
 	    a[j] = (double) random() / random_max;
 
-	vx_EP[i] = vi_EP+sqrt(-2*vti*vti*log(a[0]))*cos(2*pi*a[1]);
-	vx_EP[i+1] = vi_EP+sqrt(-2*vti*vti*log(a[0]))*sin(2*pi*a[1]);
+	vx_EP[i] = v_EP+sqrt(-2*vt*vt*log(a[0]))*cos(2*pi*a[1]);
+	vx_EP[i+1] = v_EP+sqrt(-2*vt*vt*log(a[0]))*sin(2*pi*a[1]);
     }
 
 }

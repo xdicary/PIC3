@@ -14,11 +14,11 @@ void density(void)
     re = qe/dx;			/*  charge weighting factor */
     ri = qi/dx;
 
-    if (energic_particle != 0)
-    {
+    if (energic_particle == 1)
 	re = re*ne/(ne+ne_EP/weighting_EP);
+
+    if (energic_particle == 2)
 	ri = ri*ni/(ni+ni_EP/weighting_EP);
-    }
 
     for (j=0; j<=nx; j++) 
     {

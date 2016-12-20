@@ -19,11 +19,11 @@
 #define K = 1.381e-23
 #define EPS0 = 8.854e-12
 
-#define MaxParticle 500001
-#define MaxEP 500001
-#define MaxGrid 2001
-#define MaxTime 60001
-#define fftpoint 2000
+#define MaxParticle 500000
+#define MaxEP 500000
+#define MaxGrid 3000
+#define MaxTime 100000
+#define fftpoint 3000
 
 /* particle arrays */ 
 
@@ -84,7 +84,7 @@ double TotalEnergy[MaxTime];
  double lambda_d;                /* Debye-length */ 
  double weighting_EP;
 
- double v_EP;
+ double ve_EP;
  double vi_EP;
 
  int ne, ni;                    /* # simulation electrons, ions */
