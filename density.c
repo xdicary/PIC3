@@ -52,7 +52,21 @@ void density(void)
         rho_plasmai[j2] = rho_plasmai[j2] + ri*f2;
     }
 
-    if ( energic_particle != 0 )
+   if ( energic_particle == 1 )
+    {
+        for (i=0; i<ne_EP; i++)
+        {
+            xa = x_EP[i]/dx;
+            j1 = xa;
+            j2 = j1 + 1;
+            f2 = xa - j1;
+            f1 = 1.0 - f2;
+            rho_EP[j1] = rho_EP[j1] + re*f1/weighting_EP;
+            rho_EP[j2] = rho_EP[j2] + re*f2/weighting_EP;
+        }
+    }
+
+    if ( energic_particle == 2 )
     {
         for (i=0; i<ni_EP; i++)
         {

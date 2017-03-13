@@ -66,19 +66,27 @@ void plots(void)
     fclose(plot_file);
 
 
-    sprintf(cfile,"vt%d.data", isnap );
+    sprintf(cfile,"vxt%d.data", isnap );
     plot_file = fopen(cfile, "w");
 
     for (j=0; j<ne; j++)
     {
-	fprintf( plot_file, "%f	%f\n", vxe[j],vxi[j]);
+	fprintf( plot_file, "%f	%f	%f	%f\n", vxe[j], vxi[j], xe[j], xi[j]);
     }
 
-    if ( energic_particle != 0 )
+    if ( energic_particle == 1 )
+    {
+    for (j=0; j<ne_EP; j++)
+    {
+        fprintf( plot_file, "%f %f	%f	%f\n" , vx_EP[j], vx_EP[j], x_EP[j], x_EP[j]);
+    }
+    }
+
+    if ( energic_particle == 2 )
     {
     for (j=0; j<ni_EP; j++)
     {
-	fprintf( plot_file, "%f	%f\n" , 0.0, vx_EP[j]);
+	fprintf( plot_file, "%f	%f	%f	%f\n" , vx_EP[j], vx_EP[j], x_EP[j], x_EP[j]);
     }
     }
 

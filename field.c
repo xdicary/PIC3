@@ -101,7 +101,16 @@ void field(void)
     for ( j=0; j<5; j++)
 	x_time[j][i_time] = xe[ni/10+j*ni/5+0];
 
-    if ( energic_particle != 0 )
+    if ( energic_particle == 1 )
+    {
+        for ( j=0; j<5; j++)
+            x_EP_time[j][i_time] = x_EP[ni_EP/10+j*ni_EP/5];
+
+    for ( j=0; j<ne_EP; j++ )
+        Energy_P_EP[i_time] = Energy_P_EP[i_time] + vx_EP[j]*vx_EP[j];
+    }
+
+    if ( energic_particle == 2 )
     {
 	for ( j=0; j<5; j++)
 	    x_EP_time[j][i_time] = x_EP[ni_EP/10+j*ni_EP/5];

@@ -23,6 +23,7 @@ extern void diagnostics(void);		/* diagnostic routine */
 extern void phiplots(void);
 extern void input(void);
 extern void perturbation(void);
+/*extern void filtering2(void);*/
 
 FILE *history_file;			/* file for writing out time histories */            
 
@@ -94,6 +95,8 @@ int main()
     }
 
     phiplots();
+
+/*    filtering2();*/
 
     close(history_file);          /*   close time-hist files */
 

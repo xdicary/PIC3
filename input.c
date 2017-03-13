@@ -11,19 +11,19 @@ void input(void)
 {
     /* set up simulation parameters */
 
-    nt = 20000;			/* # timesteps  */
+    nt = 1000;			/* # timesteps  */
     nx = 1024;                   /* # grid points */
 
-    ne = 51200;			/* # electrons   */
-    ni = 51200;                     /* # ions */
+    ne = 102400;			/* # electrons   */
+    ni = 102400;                     /* # ions */
 
-    ne_EP = 10240;
-    ni_EP = 10240;
+    ne_EP = 1024;
+    ni_EP = 0;
 
     weighting_EP = 1.0;
 
-    ve_EP = 4.0;
-    vi_EP = 2.0;
+    ve_EP = 3.0;
+    vi_EP = 3.0;
 
     grid_length = 204.8;        /* size of spatial grid */
     plasma_start = 0.;          /* plasma edge */
@@ -38,7 +38,7 @@ void input(void)
     
     fftsize = 1024;		/* 2^n */
 
-    energic_particle = 2;       /* 0 = no energic particles,    */
+    energic_particle = 1;       /* 0 = no energic particles,    */
                                 /* 1 = energic electrons,       */
                                 /* 2 = energic ions             */
 
@@ -56,6 +56,6 @@ void input(void)
                                 /*                3 = thermal */
 
     ihist = 1;                  /* frequency of time-history output */
-    igraph = 5000;                /* freq. of graphical snapshots */
-    iout = 1000;			/* freq. of printed diags. */
+    igraph = 10;                /* freq. of graphical snapshots */
+    iout = 200;			/* freq. of printed diags. */
 }

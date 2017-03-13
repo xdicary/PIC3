@@ -37,7 +37,7 @@ void filtering(void)
 	for (i = 0; i<nx; i++)
 	{
 /*		if ( i>8 && i<1017 || i==0  )*/
-		if ( i!=1 && i!=2048 )
+		if ( i!=6 && i!=1019 )
 		{
 			x[i].real = 0.0;
 			x[i].img = 0.0;
