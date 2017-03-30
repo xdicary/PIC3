@@ -16,9 +16,9 @@ void filtering(void)
 	int i;
 	PI = atan(1) * 4;
 
-/*	for (i = 0; i<fftsize; i++)
+/*	for (i = 0; i<nx; i++)
 	{
-		x[i].real = sin(2*PI*10/fftsize*i)+2*sin(2*PI*10/fftsize*i*5);
+		x[i].real = sin(2*PI*10/fftsize*0.2*i)+2*sin(2*PI*10/fftsize*0.2*i*5);
 		x[i].img = 0.0;
 	}
 */
@@ -37,7 +37,7 @@ void filtering(void)
 	for (i = 0; i<nx; i++)
 	{
 /*		if ( i>8 && i<1017 || i==0  )*/
-		if ( i!=6 && i!=1019 )
+		if ( i!=1 && i!=1024 ) /* a+b=1025 */
 		{
 			x[i].real = 0.0;
 			x[i].img = 0.0;

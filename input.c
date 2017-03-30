@@ -11,16 +11,16 @@ void input(void)
 {
     /* set up simulation parameters */
 
-    nt = 1000;			/* # timesteps  */
+    nt = 5000;			/* # timesteps  */
     nx = 1024;                   /* # grid points */
 
-    ne = 102400;			/* # electrons   */
-    ni = 102400;                     /* # ions */
+    ne = 51200;			/* # electrons   */
+    ni = 51200;                     /* # ions */
 
-    ne_EP = 1024;
+    ne_EP = 51200;
     ni_EP = 0;
 
-    weighting_EP = 1.0;
+    weighting_EP = 1000.0;
 
     ve_EP = 3.0;
     vi_EP = 3.0;
@@ -42,7 +42,7 @@ void input(void)
                                 /* 1 = energic electrons,       */
                                 /* 2 = energic ions             */
 
-    filtering_switch = 0;	/* 0 = no filtering	*/
+    filtering_switch = 1;	/* 0 = no filtering	*/
 
     perturbation_switch = 0;	/* 0 = no perturbation, 			*/
 				/* 1 = perturbation on initial density,		*/
@@ -56,6 +56,6 @@ void input(void)
                                 /*                3 = thermal */
 
     ihist = 1;                  /* frequency of time-history output */
-    igraph = 10;                /* freq. of graphical snapshots */
-    iout = 200;			/* freq. of printed diags. */
+    igraph = 50;                /* freq. of graphical snapshots */
+    iout = 1000;			/* freq. of printed diags. */
 }
