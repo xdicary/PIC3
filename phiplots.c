@@ -26,27 +26,48 @@ void phiplots(void)
     fclose(plot_file);
 
 
-
-/*    sprintf(cfile,"v.data");
+    sprintf(cfile,"phiAt.data");
 
     plot_file = fopen(cfile,"w");
 
-    for (i=0; i<ni; i++)
+    for (i=0; i<=nt; i++)
     {
-	fprintf(plot_file, "%f	%f\n", vm[i], vx[i]);
+        fprintf(plot_file, "%f	%f	%f	%f	%f	%f	%f	%f	%f	%f\n", phiAt[0][i], phiAt[1][i], phiAt[2][i], phiAt[3][i], phiAt[4][i], phiAt[5][i], phiAt[6][i], phiAt[7][i], phiAt[8][i], phiAt[9][i]);
     }
 
     fclose(plot_file);
-*/
+
+
+    sprintf(cfile,"wep.data");
+
+    plot_file = fopen(cfile,"w");
+
+    for (i=0; i<ne_EP; i++)
+    {
+	fprintf(plot_file, "%f\n", w_EP[i]);
+    }
+
+    fclose(plot_file);
+
 
 
     sprintf(cfile,"Energy.data");
 
     plot_file = fopen(cfile,"w");
 
-    for (i=1; i<=nt; i++)
+    if ( energic_particle != 0 )
+    {    
+	for (i=1; i<=nt; i++)
+	{
+            fprintf(plot_file, "%d  %f	%f	%f	%f	%f\n", i, TotalEnergy[i], Energy_Pe[i], Energy_Pi[i], Energy_E[i], Energy_P_EP[i]);
+	}
+    }
+    else
     {
-        fprintf(plot_file, "%d  %f	%f	%f	%f\n", i, TotalEnergy[i], Energy_Pe[i], Energy_Pi[i], Energy_E[i]);
+	for (i=1; i<=nt; i++)
+	{
+	    fprintf(plot_file, "%d  %f	%f	%f	%f\n", i, TotalEnergy[i], Energy_Pe[i], Energy_Pi[i], Energy_E[i]);
+	}
     }
 
     fclose(plot_file);

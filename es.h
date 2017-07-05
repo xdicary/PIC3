@@ -37,6 +37,7 @@ double vxi[MaxParticle];
 
 double x_EP[MaxParticle];
 double vx_EP[MaxEP];
+double w_EP[MaxEP];
 
 double x_time[5][MaxTime];
 double x_EP_time[5][MaxTime];
@@ -56,6 +57,7 @@ double phifft[fftpoint];
 
 double Ex_mid[MaxTime];
 double phi_mid[MaxTime];
+double phiAt[10][MaxTime];
 
 double Energy_E[MaxTime];
 double Energy_Pe[MaxTime];

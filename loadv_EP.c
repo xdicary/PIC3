@@ -28,10 +28,20 @@ void loadv_EP(int n_EP, double v_EP, double vt, double vx_EP[])
         vx_EP[i] = vx_EP[i]+2.5;
     }
 */
-    for (i=0; i<n_EP; i++)
+/*    for (i=0; i<n_EP; i++)
     {
 	b = (double) random() / random_max;
-	vx_EP[i] = 27.0-10.0*sqrt(b);
+	vx_EP[i] = 15.0+15.0*b;
+    }
+*/
+
+    for (i=0; i<n_EP; i++)
+    {
+	w_EP[i] = (double) i/n_EP;
+	vx_EP[i] = 5.0+w_EP[i]*15.0;
+
+	b = (double) n_EP/(n_EP-1);
+	w_EP[i] = w_EP[i]*2.0*b;
     }
 
 

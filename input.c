@@ -11,7 +11,7 @@ void input(void)
 {
     /* set up simulation parameters */
 
-    nt = 5000;			/* # timesteps  */
+    nt = 7500;			/* # timesteps  */
     nx = 1024;                   /* # grid points */
 
     ne = 51200;			/* # electrons   */
@@ -20,7 +20,7 @@ void input(void)
     ne_EP = 51200;
     ni_EP = 0;
 
-    weighting_EP = 1000.0;
+    weighting_EP = 2000.0;
 
     ve_EP = 3.0;
     vi_EP = 3.0;
@@ -56,6 +56,6 @@ void input(void)
                                 /*                3 = thermal */
 
     ihist = 1;                  /* frequency of time-history output */
-    igraph = 50;                /* freq. of graphical snapshots */
+    igraph = 500;                /* freq. of graphical snapshots */
     iout = 1000;			/* freq. of printed diags. */
 }

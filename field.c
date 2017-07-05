@@ -87,7 +87,7 @@ void field(void)
 
     /* Record energy */
 
-    for ( j=0; j<=nx; j++ )
+    for ( j=0; j<nx; j++ )
 	Energy_E[i_time] = Energy_E[i_time] + Ex[j]*Ex[j];
 
     for ( j=0; j<ne; j++ )
@@ -107,7 +107,7 @@ void field(void)
             x_EP_time[j][i_time] = x_EP[ni_EP/10+j*ni_EP/5];
 
     for ( j=0; j<ne_EP; j++ )
-        Energy_P_EP[i_time] = Energy_P_EP[i_time] + vx_EP[j]*vx_EP[j];
+        Energy_P_EP[i_time] = Energy_P_EP[i_time] + w_EP[j]*vx_EP[j]*vx_EP[j];
     }
 
     if ( energic_particle == 2 )

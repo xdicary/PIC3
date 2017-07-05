@@ -16,7 +16,7 @@ void init(void)
 
     /* local variables */
 
-    int i;
+    int i, j;
 
     int necell, nicell, epcell;
     double xdodx;
@@ -49,6 +49,11 @@ void init(void)
 
     for ( i=0; i<=nt; i++ )
     {
+	for ( j=0; j<10; j++ )
+	{
+	    phiAt[j][i] = 0.0;
+	}
+
 	Energy_Pe[i] = 0.0;
 	Energy_Pi[i] = 0.0;
 	Energy_E[i] = 0.0;

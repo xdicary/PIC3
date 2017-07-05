@@ -8,12 +8,11 @@ typedef struct
 }complex;
 
 
-complex x[fftpoint], *W;/*输出序列的值*/
+complex x[fftpoint], *W;
 double PI;
-
 void filtering(void)
 {
-	int i;
+	int i, j;
 	PI = atan(1) * 4;
 
 /*	for (i = 0; i<nx; i++)
@@ -36,13 +35,20 @@ void filtering(void)
 	}
 	for (i = 0; i<nx; i++)
 	{
-/*		if ( i>8 && i<1017 || i==0  )*/
-		if ( i!=1 && i!=1024 ) /* a+b=1025 */
+		if ( i>5 && i<1019 || i==0  )
+/*		if ( i!=3 && i!=1021 )*/
+/*		if ( i!=2 && i!=1022 && i!=3 && i!=1021 )*/		/* a+b=1024 */
 		{
 			x[i].real = 0.0;
 			x[i].img = 0.0;
 		}
 	}
+
+	for ( j=0; j<10; j++)
+	{
+	    phiAt[j][i_time] = sqrt(x[j+1].real*x[j+1].real+x[j+1].img*x[j+1].img);
+	}
+
 	ifft();
 	for (i=0; i<nx; i++)
 		phi[i] = x[i].real;
@@ -50,7 +56,6 @@ void filtering(void)
 */	phi[nx] = phi[0];
 }
 
-/*进行基-2 FFT运算*/
 void fft()
 {
 	int i = 0, j = 0, k = 0, l = 0;
@@ -76,7 +81,7 @@ void ifft()
 {
 	int i = 0, j = 0, k = 0, l = fftsize;
 	complex up, down;
-	for (i = 0; i< (int)(log(fftsize) / log(2)); i++) /*蝶形运算*/
+	for (i = 0; i< (int)(log(fftsize) / log(2)); i++)
 	{
 		l /= 2;
 		for (j = 0; j<fftsize; j += 2 * l)

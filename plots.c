@@ -92,7 +92,6 @@ void plots(void)
 
     fclose(plot_file);
 
-
     isnap++;        	       /* increment snapshot counter */
 
 }     
