@@ -12,8 +12,8 @@
 void loadv_EP(int n_EP, double v_EP, double vt, double vx_EP[])
 {
 
-    int i, j;
-    double b, a[2];
+    int i, j, k, pnx, pnv;
+/*    double b, a[2];*/
 
 /*    for (i=0; i<ni_EP; i++)
     {
@@ -35,7 +35,7 @@ void loadv_EP(int n_EP, double v_EP, double vt, double vx_EP[])
     }
 */
 
-    for (i=0; i<n_EP; i++)
+/*    for (i=0; i<n_EP; i++)
     {
 	w_EP[i] = (double) i/n_EP;
 	vx_EP[i] = 5.0+w_EP[i]*15.0;
@@ -43,7 +43,7 @@ void loadv_EP(int n_EP, double v_EP, double vt, double vx_EP[])
 	b = (double) n_EP/(n_EP-1);
 	w_EP[i] = w_EP[i]*2.0*b;
     }
-
+*/
 
 /*    for (i=0; i<n_EP; i=i+2)
     {
@@ -57,4 +57,15 @@ void loadv_EP(int n_EP, double v_EP, double vt, double vx_EP[])
         vx_EP[i+1] = 23.127+sqrt(-2*0.6*0.6*log(a[0]))*sin(2*pi*a[1]);
     }
 */
+    pnx = 256;
+    pnv = 200;
+    for ( j=0; j<pnv; j++ )
+    {
+	for ( i=0; i<pnx; i++ )
+	{
+	    k = j*pnx+i;
+	    vx_EP[k] = (double) 5.0+15.0/pnv*(j+1.0);
+	    w_EP[k] =  (double) (1.0+j*2.0)/pnv;
+	}
+    }
 }

@@ -11,7 +11,7 @@ void input(void)
 {
     /* set up simulation parameters */
 
-    nt = 7500;			/* # timesteps  */
+    nt = 5000;			/* # timesteps  */
     nx = 1024;                   /* # grid points */
 
     ne = 51200;			/* # electrons   */
@@ -20,7 +20,7 @@ void input(void)
     ne_EP = 51200;
     ni_EP = 0;
 
-    weighting_EP = 2000.0;
+    weighting_EP = 200;
 
     ve_EP = 3.0;
     vi_EP = 3.0;
@@ -42,7 +42,7 @@ void input(void)
                                 /* 1 = energic electrons,       */
                                 /* 2 = energic ions             */
 
-    filtering_switch = 1;	/* 0 = no filtering	*/
+    filtering_switch = 0;	/* 0 = no filtering	*/
 
     perturbation_switch = 0;	/* 0 = no perturbation, 			*/
 				/* 1 = perturbation on initial density,		*/
