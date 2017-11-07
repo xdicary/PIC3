@@ -38,11 +38,11 @@ void input(void)
     
     fftsize = 1024;		/* 2^n */
 
-    energic_particle = 1;       /* 0 = no energic particles,    */
+    energic_particle = 0;       /* 0 = no energic particles,    */
                                 /* 1 = energic electrons,       */
                                 /* 2 = energic ions             */
 
-    filtering_switch = 0;	/* 0 = no filtering	*/
+    filtering_switch = 1;	/* 0 = no filtering	*/
 
     perturbation_switch = 0;	/* 0 = no perturbation, 			*/
 				/* 1 = perturbation on initial density,		*/
