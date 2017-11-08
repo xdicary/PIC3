@@ -57,8 +57,8 @@ void loadv_EP(int n_EP, double v_EP, double vt, double vx_EP[])
         vx_EP[i+1] = 23.127+sqrt(-2*0.6*0.6*log(a[0]))*sin(2*pi*a[1]);
     }
 */
-    pnx = 320;
-    pnv = 320;
+    pnx = 256;	/* 256 */
+    pnv = 200;	/* 200 */
     for ( j=0; j<pnv; j++ )
     {
 	for ( i=0; i<pnx; i++ )

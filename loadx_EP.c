@@ -35,8 +35,8 @@ void loadx_EP(int n_EP, double x_EP[])
 
     for ( i=0; i<n_EP; i++)
     {
-/*	x_EP[i] = plasma_start + 0.8*tmp*(0.125+i%256);*/
-	x_EP[i] = plasma_start + 0.32 + 0.64*(i%320);
+	x_EP[i] = plasma_start + 0.4 + 0.8*(i%256);
+/*	x_EP[i] = plasma_start + 0.32 + 0.64*(i%320);*/
     }
 
 }
