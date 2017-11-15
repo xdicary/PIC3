@@ -80,9 +80,9 @@ void density(void)
         }
     }
 
-    for (j=0; j<=nx+1; j++)
+    for (j=0; j<=nx; j++)
 	rho_all[j] = rho_plasmae[j] + rho_plasmai[j] + rho_EP[j];
-/*	rho_all[j] = rho_plasmae[j];
+/*	rho_all[j] = rho_plasmae[j] + 1.0;
 */
     if (bc_field == 1)
     {

@@ -85,9 +85,15 @@ void field(void)
     phi_mid[i_time] = phi[x_midpoint];
 
     /* Record energy */
-
+/*
     for ( j=0; j<nx; j++ )
 	Energy_E[i_time] = Energy_E[i_time] + Ex[j]*Ex[j];
+*/
+    for (j=0; j<nx; j=j+2)
+	Energy_E[i_time] = Energy_E[i_time] + 2.0*Ex[j]*Ex[j];
+    for (j=1; j<nx; j=j+2)
+	Energy_E[i_time] = Energy_E[i_time] + 4.0*Ex[j]*Ex[j];
+    Energy_E[i_time] = Energy_E[i_time]*dx/3.0;
 
     for ( j=0; j<ne; j++ )
 	Energy_Pe[i_time] = Energy_Pe[i_time] + 0.5*vxe[j]*vxe[j];
