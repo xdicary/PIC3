@@ -33,7 +33,7 @@ void density(void)
     for (i=0; i<ne; i++)
     {
         xa = xe[i]/dx;
-        j1 = xa;
+        j1 = (int) xa;
         j2 = j1 + 1;
         f2 = xa - j1;
         f1 = 1.0 - f2;
@@ -82,7 +82,9 @@ void density(void)
 
     for (j=0; j<=nx; j++)
 	rho_all[j] = rho_plasmae[j] + rho_plasmai[j] + rho_EP[j];
-/*	rho_all[j] = rho_plasmae[j] + 1.0;
+/*
+    for (j=1; j<nx; j++)
+ 	rho_all[j] = rho_plasmae[j] + 1.0;
 */
     if (bc_field == 1)
     {

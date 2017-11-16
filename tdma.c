@@ -19,8 +19,9 @@ void tdma(void)
     double t[nx];
     double h[nx];
     double g[nx];
-    int i;
+    int i, j;
     double p, test;
+    double phi_iteration[nx+1];
 
     for (i=0; i<nx; i++)
 	a[i] = -1.0;
@@ -69,4 +70,19 @@ void tdma(void)
     for (i=1; i<nx; i++)
 	phi[i+1] = h[i]+g[i]*phi[1];
     phi[0] = phi[nx];
+
+    /* Jacobi iteration */
+    for (j=0; j<50; j++)
+    { 
+	for (i=1; i<nx; i++)
+	{
+	    phi_iteration[i] = (phi[i+1]+phi[i-1]+rhot[i]*dx*dx)/2.0;
+	}
+	phi_iteration[0] = (phi[nx-1]+phi[1]+rhot[0]*dx*dx)/2.0;
+	phi_iteration[nx] = phi_iteration[0];
+
+	for (i=0; i<=nx; i++)
+	    phi[i] = phi_iteration[i];
+    }
+
 }

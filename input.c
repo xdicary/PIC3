@@ -14,8 +14,8 @@ void input(void)
     nt = 5000;			/* # timesteps  */
     nx = 1024;                   /* # grid points */
 
-    ne = 51200;			/* # electrons   */
-    ni = 51200;                     /* # ions */
+    ne = 102400;			/* # electrons   */
+    ni = 102400;                     /* # ions */
 
     ne_EP = 51200;
     ni_EP = 0;

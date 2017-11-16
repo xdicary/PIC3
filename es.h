@@ -92,7 +92,6 @@ double TotalEnergy[MaxTime];
  int ne, ni;                    /* # simulation electrons, ions */
  int ne_EP, ni_EP;
 
-
 /* grid variables */
 
  int  nt;                       /* # timesteps */

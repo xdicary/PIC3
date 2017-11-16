@@ -9,7 +9,7 @@
 #FFLAGS = -w -O2
 
 # with debug option
-FFLAGS = -w 
+FFLAGS = -w
 
 # math library
 
