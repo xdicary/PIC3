@@ -14,6 +14,7 @@ extern void filtering(void);
 void field(void)
 {
     int j, x_midpoint;
+    double particle_coefficient;
 
     /* Add neutral background to get net density */
  
@@ -93,13 +94,17 @@ void field(void)
 	Energy_E[i_time] = Energy_E[i_time] + 2.0*Ex[j]*Ex[j];
     for (j=1; j<nx; j=j+2)
 	Energy_E[i_time] = Energy_E[i_time] + 4.0*Ex[j]*Ex[j];
-    Energy_E[i_time] = Energy_E[i_time]*dx/3.0*250.0;
+    Energy_E[i_time] = Energy_E[i_time]*dx/6.0;
+
+    particle_coefficient = (double) grid_length/ne;
 
     for ( j=0; j<ne; j++ )
 	Energy_Pe[i_time] = Energy_Pe[i_time] + 0.5*vxe[j]*vxe[j];
+    Energy_Pe[i_time] = Energy_Pe[i_time]*particle_coefficient;
 
-    for ( j=0; j<=ni; j++ )
+    for ( j=0; j<ni; j++ )
 	Energy_Pi[i_time] = Energy_Pi[i_time] + 918.0*vxi[j]*vxi[j];
+    Energy_Pi[i_time] = Energy_Pi[i_time]*particle_coefficient;
 
     TotalEnergy[i_time] = 0.0*Energy_E[i_time] + Energy_Pe[i_time] + Energy_Pi[i_time];
 

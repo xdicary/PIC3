@@ -59,6 +59,7 @@ void init(void)
 	Energy_E[i] = 0.0;
 	Energy_P_EP[i] = 0.0;
 	TotalEnergy[i] = 0.0;
+	error[i] = 0.0;
     }
 
     /* printf("time: %f, x: %f, y: %f\n", time, x, y); */  

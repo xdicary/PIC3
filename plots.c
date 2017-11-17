@@ -36,7 +36,7 @@ void plots(void)
 
     for (j=0; j<=nx; j++)
     {
-	fprintf( plot_file, "%f	%f	%f\n" ,xgrid[j],-rho_all[j],rhot[j] );
+	fprintf( plot_file, "%0.6e	%0.6e\n", xgrid[j], rhot[j] );
     }
 
     fclose(plot_file);
@@ -49,7 +49,7 @@ void plots(void)
 
     for (j=0; j<=nx; j++)
     {
-	fprintf( plot_file, "%f	%f	%f	%f\n" ,xgrid[j],phi[j],Ex[j],pphi[j] );
+	fprintf( plot_file, "%0.6e	%0.6e	%0.6e	%0.6e\n", xgrid[j], phi[j], Ex[j], pphi[j] );
     }
 
     fclose(plot_file);
@@ -71,23 +71,23 @@ void plots(void)
 
     for (j=0; j<ne; j++)
     {
-	fprintf( plot_file, "%f	%f	%f	%f\n", vxe[j], vxi[j], xe[j], xi[j]);
+	fprintf( plot_file, "%0.6e	%0.6e	%0.6e	%0.6e\n", vxe[j], vxi[j], xe[j], xi[j]);
     }
 
     if ( energic_particle == 1 )
     {
-    for (j=0; j<ne_EP; j++)
-    {
-        fprintf( plot_file, "%f %f	%f	%f\n" , vx_EP[j], vx_EP[j], x_EP[j], x_EP[j]);
-    }
+	for (j=0; j<ne_EP; j++)
+	{
+            fprintf( plot_file, "%0.6e	%0.6e	%0.6e	%0.6e\n" , vx_EP[j], vx_EP[j], x_EP[j], x_EP[j]);
+	}
     }
 
     if ( energic_particle == 2 )
     {
-    for (j=0; j<ni_EP; j++)
-    {
-	fprintf( plot_file, "%f	%f	%f	%f\n" , vx_EP[j], vx_EP[j], x_EP[j], x_EP[j]);
-    }
+	for (j=0; j<ni_EP; j++)
+	{
+	    fprintf( plot_file, "%0.6e	%0.6e	%0.6e	%0.6e\n" , vx_EP[j], vx_EP[j], x_EP[j], x_EP[j]);
+	}
     }
 
     fclose(plot_file);

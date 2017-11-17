@@ -20,7 +20,7 @@ void tdma(void)
     double h[nx];
     double g[nx];
     int i, j;
-    double p, test;
+    double p, test, err;
     double phi_iteration[nx+1];
 
     for (i=0; i<nx; i++)
@@ -81,8 +81,15 @@ void tdma(void)
 	phi_iteration[0] = (phi[nx-1]+phi[1]+rhot[0]*dx*dx)/2.0;
 	phi_iteration[nx] = phi_iteration[0];
 
+        for (i=0; i<nx; i++)
+	{
+	    err = phi[i]-phi_iteration[i];
+	    err = fabs(err);
+            error[j] += err;
+	}
+
 	for (i=0; i<=nx; i++)
 	    phi[i] = phi_iteration[i];
-    }
 
+    }
 }

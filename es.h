@@ -64,6 +64,7 @@ double Energy_Pe[MaxTime];
 double Energy_Pi[MaxTime];
 double Energy_P_EP[MaxTime];
 double TotalEnergy[MaxTime];
+double error[MaxTime];
 
 /* plasma constants, parameters */
 
